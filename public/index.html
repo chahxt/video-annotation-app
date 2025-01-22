@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Video Annotation App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1> Video Annotation Application</h1>
+
+  <!-- User Profile Section -->
+  <div class="user-profile">
+    <img id="user-avatar" src="default-avatar.png" alt="User Avatar" width="50" height="50">
+    <span id="username">Nirmala Sitharaman</span>
+    <input type="file" id="avatar-upload" accept="image/*" onchange="updateAvatar(event)">
+    <button id="edit-avatar" onclick="editAvatar()">
+      <span>•</span>
+      <span>•</span>
+      <span>•</span>
+    </button>
+  </div>
+
+  <div id="video-container">
+    <video id="video-player" controls>
+      <source src="samplevideolecture.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div id="timeline"></div>
+
+  <div>
+    <input type="text" id="search-bar" placeholder="Search Annotations..." oninput="searchAnnotations()" />
+  </div>
+
+  <div class="annotation-section">
+    <textarea id="annotation-input" placeholder="Enter annotation here..."></textarea>
+    <button onclick="addAnnotation()">Add Annotation</button>
+  </div>
+
+  <ul id="annotation-list"></ul>
+
+  <footer>
+    <p>Video Annotation App | Developed by team</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
